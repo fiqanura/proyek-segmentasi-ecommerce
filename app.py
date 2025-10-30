@@ -90,6 +90,10 @@ st.dataframe(rfm_data.groupby('Cluster').agg({
 
 st.header("Cek Segmen Pelanggan (Live)")
 
+with st.expander("Tampilkan Seluruh Data Pelanggan (untuk Pengecekan)"):
+    # Ini akan menampilkan seluruh DataFrame rfm_data sebagai tabel interaktif
+    st.dataframe(rfm_data)
+
 # Input dari pengguna
 customer_id_input = st.number_input("Masukkan Customer ID:", step=1, value=0)
 
