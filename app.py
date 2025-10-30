@@ -113,9 +113,14 @@ if customer_id_input != 0:
             segment_info = segment_interpretation[predicted_cluster]
             
             st.success(f"Pelanggan {customer_id_input} termasuk dalam segmen:")
-            st.subheader(f"**Cluster {predicted_cluster}: {segment_info['Nama']}**")
-            st.write(f"({segment_info['Deskripsi']})")
-        
+            st.subheader(f"**Cluster {predicted_cluster}: {segment_info['Nama']}**")    
+
+            st.write("**Deskripsi:**")
+            st.write(segment_info['Deskripsi'])
+
+            st.write("**Rekomendasi Strategi:**")
+            st.write(segment_info.get("Rekomendasi Strategi", "N/A"))
+            
         else:
             st.warning("Customer ID tidak ditemukan dalam data RFM. Pelanggan ini mungkin tidak memiliki transaksi yang valid.")
             
